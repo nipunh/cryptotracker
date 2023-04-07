@@ -3,6 +3,7 @@ import millify from 'millify';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../services/cryptoAPI'
+import Loader from './Loader';
 const Cryptocurrencies = ({simplified}) => {
   const count = simplified ? 10 : 100;
 
@@ -22,7 +23,7 @@ const Cryptocurrencies = ({simplified}) => {
   }, [cryptosList, searchTerm])
   
 
-  if(isFetching) return "Loading...";
+  if(isFetching) return <Loader />;
   return (
    <>
       { !simplified && 

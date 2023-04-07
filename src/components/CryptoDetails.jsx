@@ -3,10 +3,11 @@ import HTMLReactParser from 'html-react-parser'
 import { useParams } from 'react-router-dom'
 import millify from 'millify'
 import { Col, Row, Typography, Select } from 'antd'
-import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExceptionOutlined, StopOutlined, TrophyOutlined, ExclamationCircleOutlined, CheckOutlined, ThunderboltOutlined, NumberOutlined } from '@ant-design/icons'
+import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, StopOutlined, TrophyOutlined, ExclamationCircleOutlined, CheckOutlined, ThunderboltOutlined, NumberOutlined } from '@ant-design/icons'
 
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoAPI'
 import LineChart from './LineChart'
+import Loader from './Loader'
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -36,7 +37,7 @@ const CryptoDetails = () => {
     { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)}`, icon: <ExclamationCircleOutlined /> },
   ];
 
-  if (isFetching || isLoading) return "Loading...";
+  if (isFetching || isLoading) return <Loader />;
 
   return (
     <Col className="coin-detail-container">
@@ -110,7 +111,7 @@ const CryptoDetails = () => {
             cryptoDetails.links.map((link) => 
               <Row className="coin-link" key={link.name}>
                 <Title level={5} className='link-name'>{link.type}</Title>
-                <a href={link.url} target="_blank">{link.name}</a>
+                <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
               </Row>
             )
           }
