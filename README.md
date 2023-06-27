@@ -1,4 +1,5 @@
 
 # Crypto Tracker
 
-![Crypto Tracker](https://user-images.githubusercontent.com/35566310/236703142-5ab6d9e0-6ca8-419e-b712-a4625edf372a.jpg)
+![Crypto Tracker](
+<img width="1512" alt="Screenshot 2023-06-27 at 6 06 01 PM" src="https://github.com/nipunh/cryptotracker/assets/26524611/8385c1c3-df4f-42ef-9319-5d08f2ac5189">)
