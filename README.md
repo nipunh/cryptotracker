@@ -15,7 +15,7 @@ This web application, built using React and Redux Toolkit, allows users to easil
   <li><b>News and market analysis</b>: Stay informed with the latest news and market insights related to the cryptocurrency industry.</li>
 </ul>
 
-###Technologies Used
+### Technologies Used
 
 <ul>
 <li><b>React</b>: A popular JavaScript library for building user interfaces.</li>
