@@ -11,8 +11,16 @@ This web application, built using React and Redux Toolkit, allows users to easil
 ### Key Features
 <ul>
   <li><b>Real-time cryptocurrency price tracking</b>: Stay updated with the latest prices of your favorite cryptocurrencies.</li>
-  <li>Historical price data: View historical price charts and analyze the performance of cryptocurrencies over different timeframes.</li>
-  <li>News and market analysis: Stay informed with the latest news and market insights related to the cryptocurrency industry.</li>
+  <li><b>Historical price data</b>: View historical price charts and analyze the performance of cryptocurrencies over different timeframes.</li>
+  <li><b>News and market analysis</b>: Stay informed with the latest news and market insights related to the cryptocurrency industry.</li>
+</ul>
+
+###Technologies Used
+
+<ul>
+<li><b>React</b>: A popular JavaScript library for building user interfaces.</li>
+<li><b>Redux Toolkit</b>: A state management library that simplifies the process of managing application state in React.</li>
+<li><b>Rapid API</b>: An API marketplace that provides access to a wide range of APIs, including cryptocurrency market data.</li>
 </ul>
 
 <img width="1512" alt="Screenshot 2023-06-27 at 6 06 01 PM" src="https://github.com/nipunh/cryptotracker/assets/26524611/8385c1c3-df4f-42ef-9319-5d08f2ac5189">
