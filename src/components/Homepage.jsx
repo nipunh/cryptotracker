@@ -14,7 +14,6 @@ const Homepage = () => {
   if (isFetching) return <Loader />;
 
   const globalStats = data?.data?.stats;
-  console.log(process.env.XRapidAPIKey);
   return (
     <>
       <Title>Global Crypto Statictics</Title>

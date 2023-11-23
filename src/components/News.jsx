@@ -2,7 +2,7 @@ import React from 'react'
 import { Avatar, Card, Col, Row, Typography } from 'antd';
 import moment from 'moment';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsAPI';
-// import { useGetCryptosQuery } from '../services/cryptoAPI';
+import { useGetCryptosQuery } from '../services/cryptoAPI';
 
 
 const {Title, Text} = Typography;
@@ -12,7 +12,7 @@ const demoImage = '';
 const News = ({ simplified }) => {
   // const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
   const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 6 : 12 })
-  // const { data : isFetching} = useGetCryptosQuery(100);
+  const { data : isFetching} = useGetCryptosQuery(100);
 
   if (!cryptoNews?.news?.value) return "Loading...";
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Row, Typography } from 'antd';
+import Chart from 'chart.js/auto'; 
 import { Line } from "react-chartjs-2";
 
 const { Title } = Typography;
