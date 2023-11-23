@@ -1,7 +1,8 @@
 
-# Crypto Tracker
+# Crypto Tracker : https://main--cerulean-tartufo-01ec5f.netlify.app/
 
 ### PROJECT SUMMARY
+
 <p align="justify"> 
 This web application, built using React and Redux Toolkit, allows users to easily track and monitor the prices and performance of various cryptocurrencies in real-time. Leveraging the power of Rapid API, it retrieves up-to-date market data from multiple cryptocurrency exchanges.
 </p>
