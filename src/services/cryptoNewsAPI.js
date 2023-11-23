@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 const cryptoNewsHeaders = {
-    'Ocp-Apim-Subscription-Key': "b3d267cc3be748a285e65fb7c27bc260"
+    'Ocp-Apim-Subscription-Key': process.env.NEWSAPI
 }
 
 const baseUrl = 'https://api.bing.microsoft.com/v7.0';
