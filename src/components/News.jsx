@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import { Avatar, Card, Col, Row, Select, Typography } from 'antd';
+import React from 'react'
+import { Avatar, Card, Col, Row, Typography } from 'antd';
 import moment from 'moment';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsAPI';
 import { useGetCryptosQuery } from '../services/cryptoAPI';
 
 
 const {Title, Text} = Typography;
-const {Option} = Select;
+// const {Option} = Select;
 const demoImage = '';
 
 const News = ({ simplified }) => {
-  const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
-  const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: newsCategory, count: simplified ? 6 : 12 })
-  const { data : cryptosList, isFetching} = useGetCryptosQuery(100);
+  // const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
+  const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 6 : 12 })
+  const { data : isFetching} = useGetCryptosQuery(100);
 
-  if (!cryptoNews?.value || isFetching) return "Loading...";
+  if (!cryptoNews?.news?.value) return "Loading...";
   return (
 
     <Row gutter={[24, 24]}>
-      {!simplified && (
+      {/* {!simplified && (
         <Col span={24}>
           <Select
             showSearch
@@ -32,8 +32,8 @@ const News = ({ simplified }) => {
               {cryptosList?.data?.coins.map((coin) => <Option value={coin.name}>{coin.name}</Option>)}
           </Select>
         </Col>
-      )}
-      {cryptoNews.value.map((news, i) => (
+      )} */}
+      {cryptoNews.news.value.map((news, i) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
