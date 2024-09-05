@@ -1,10 +1,9 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 const cryptoNewsHeaders = {
-   'x-rapidapi-key': '4f897de2f0mshaf9248d3369d577p1181ccjsn7cb7c1e90251',
-    'x-rapidapi-host': 'google-news22.p.rapidapi.com'
+   'x-rapidapi-key': process.env.REACT_APP_XRapidAPIKey,
+    'x-rapidapi-host': process.env.REACT_APP_XRapidAPIHost
 }
-
 
 
 const baseUrl = 'https://google-news22.p.rapidapi.com/v1';
