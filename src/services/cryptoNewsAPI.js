@@ -5,7 +5,6 @@ const cryptoNewsHeaders = {
     'x-rapidapi-host': process.env.REACT_APP_XRapidAPIHost
 }
 
-
 const baseUrl = 'https://google-news22.p.rapidapi.com/v1';
 
 const createRequest = (url) => ({url , headers : cryptoNewsHeaders})
@@ -16,7 +15,7 @@ export const cryptoNewsApi = createApi({
     }),
 
     endpoints : (builder) => ({
-        getCryptoNews : builder.query({query : ({newsCategory, count}) =>  createRequest(`/search?q=${newsCategory}&country=us&language=en`),
+        getCryptoNews : builder.query({query : ({newsCategory, count}) =>  createRequest(`/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`),
     })
     })
 }) 
