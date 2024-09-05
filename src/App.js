@@ -25,6 +25,7 @@ const App = () => {
             </Routes>
           </div>
 
+
         </Layout>
       
       <div className="footer" >
