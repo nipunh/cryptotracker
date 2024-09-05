@@ -1,38 +1,48 @@
 import React, { useEffect } from 'react'
-import { Button, Menu, Typography, Avatar } from 'antd';
+import { Button, Menu, Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import icon from '../images/cryptocurrency.png'
-import { BulbOutlined, FundOutlined, HomeOutlined, MenuOutlined, MoneyCollectFilled } from '@ant-design/icons';
+import { BulbOutlined, FundOutlined, HomeOutlined, MenuOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(null, args);
+    }, delay);
+  };
+};
 
 const Navbar = () => {
 
   const [activeMenu, setActiveMenu] = useState(true)
-  const [screenSize, setScreenSize] = useState(null)
+  const [screenSize, setScreenSize] = useState(typeof window !== "undefined" ? window.innerWidth : null);
 
   useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth);
+    const handleResize = () => setScreenSize(window.innerWidth); 
+    const debouncedHandleResize = debounce(handleResize, 200);
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', debouncedHandleResize);
 
-    return () => window.removeEventListener('resize', handleResize)
-  
-  }, [])
+    return () => window.removeEventListener('resize', debouncedHandleResize);
+  }, []);
 
   useEffect(() => {
-    if(screenSize < 768){
-      setActiveMenu(false)
-    }else{
-      setActiveMenu(true);
+    if (screenSize !== null) {   
+      if (screenSize < 768) {
+        setActiveMenu(false);  
+      } else {
+        setActiveMenu(true); 
+      }
     }
-  }, [screenSize])
+  }, [screenSize]);
   
   
 
   return (
    <div className="nav-container">
     <div className="logo-container">
-        {/* <Avatar src={icon} size="large" /> */}
         <Typography.Title level={2} className="logo" >
             <Link to="/">Cypto Tracker</Link>
         </Typography.Title>
