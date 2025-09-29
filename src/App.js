@@ -39,6 +39,7 @@ const App = () => {
               <Link to="/news">News</Link>
         </Space>
       </div>
+      <div id="location-popup-container"></div>
     </div>
     </div>
 
